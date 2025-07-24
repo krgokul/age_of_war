@@ -72,13 +72,11 @@ class BattlePlanner:
 
 
 if __name__ == "__main__":
-    own_input = (
-        "Spearmen#10;Militia#30;FootArcher#20;LightCavalry#1000;HeavyCavalry#120"
-    )
-    enemy_input = (
-        "Militia#10;Spearmen#10;FootArcher#1000;LightCavalry#120;CavalryArcher#100"
-    )
+    own_army_input = input("Enter your army (e.g. Spearmen#10;Militia#30): ").strip()
+    enemy_army_input = input("Enter enemy army (e.g. Spearmen#20;Militia#40): ").strip()
 
-    planner = BattlePlanner(own_input, enemy_input)
+    planner = BattlePlanner(own_army_input, enemy_army_input)
     result = planner.find_best_arrangement()
+    
+    print("Winning arrangement:")
     print(result)
